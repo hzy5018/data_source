@@ -69,7 +69,6 @@ def get_all_stocks_data(stock_list, start, end, show_progress=True):
 
             # print(collector.list_indexes())
 
-            print(df)
 
 
 def main():
