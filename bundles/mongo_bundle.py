@@ -137,7 +137,7 @@ def mongo_bundle(environ,
     for tframe in tframes:
         mongo_db = mongo_client[tframe]
 
-        symbols = mongo_db.list_collection_names()[:10]
+        symbols = mongo_db.list_collection_names()
         if not symbols:
             raise ValueError("no <symbol>.csv* files found in %s" % mongo_db)
 
