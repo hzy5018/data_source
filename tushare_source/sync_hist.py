@@ -70,7 +70,6 @@ def get_all_stocks_data(stock_list, start, end, show_progress=True):
             # print(collector.list_indexes())
 
 
-
 def main():
     stock_list = get_all_stocks()
     get_all_stocks_data(stock_list, "19900101", "20181231")
