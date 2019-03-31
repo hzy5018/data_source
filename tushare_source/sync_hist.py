@@ -58,10 +58,10 @@ def get_all_stocks_data(stock_list, start, end, show_progress=True):
             df.columns = ["date", "open", "high", "low", "close", "volume"]
             df["adjusted"] = df["close"]
             collector = daily[stock_code]
-            # collector.insert_many(df.to_dict("records"))
+            collector.insert_many(df.to_dict("records"))
             # print(collector.list_indexes())
             # create index for date
-            # collector.create_index([("date", 1)], unique=True)
+            collector.create_index([("date", 1)], unique=True)
             # print(df)
 
 
