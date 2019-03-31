@@ -47,7 +47,6 @@ def get_all_stocks(show_progress=True):
 def get_all_stocks_data(stock_list, start, end, show_progress=True):
     if show_progress:
         for stock_code in stock_list:
-            stock_code="603681.SH"
             click.echo("获取股票: %s" % stock_code)
             df = ts.pro_bar(pro_api=pro,
                             ts_code=stock_code,
