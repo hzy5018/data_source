@@ -60,10 +60,14 @@ def get_all_stocks_data(stock_list, start, end, show_progress=True):
             df["adjusted"] = df["close"]
             collector = daily[stock_code]
             records = df.to_dict("records")
-            if len(records) > 0:
-                collector.insert_many(records)
-                # create index for date
-                collector.create_index([("date", 1)], unique=True)
+            try:
+                if len(records) > 0:
+                    collector.insert_many(records)
+                    # create index for date
+                    collector.create_index([("date", 1)], unique=True)
+            except Exception as e:
+                print(e)
+
             # print(collector.list_indexes())
 
             print(df)
