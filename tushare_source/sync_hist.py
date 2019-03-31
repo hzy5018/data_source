@@ -47,6 +47,7 @@ def get_all_stocks(show_progress=True):
 def get_all_stocks_data(stock_list, start, end, show_progress=True):
     if show_progress:
         for stock_code in stock_list:
+            stock_code="603681.SH"
             click.echo("获取股票: %s" % stock_code)
             df = ts.pro_bar(pro_api=pro,
                             ts_code=stock_code,
@@ -58,11 +59,14 @@ def get_all_stocks_data(stock_list, start, end, show_progress=True):
             df.columns = ["date", "open", "high", "low", "close", "volume"]
             df["adjusted"] = df["close"]
             collector = daily[stock_code]
-            collector.insert_many(df.to_dict("records"))
+            records = df.to_dict("records")
+            if len(records) > 0:
+                collector.insert_many(records)
+                # create index for date
+                collector.create_index([("date", 1)], unique=True)
             # print(collector.list_indexes())
-            # create index for date
-            collector.create_index([("date", 1)], unique=True)
-            # print(df)
+
+            print(df)
 
 
 def main():
