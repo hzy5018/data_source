@@ -11,13 +11,13 @@ __author__ = 'chiyuen_woo'
 # ********************************************************************
 
 import tushare as ts
-from tushare_source.key import API_KEY
 import click
 import pymongo
 
 mongo_client = pymongo.MongoClient("60.205.230.96", 27018)
 daily = mongo_client["daily"]
 
+API_KEY = "64a7e8ae7f717d38c6c44606a51e120f06f2f25a08c5e2bcb3197cb3"
 ts.set_token(API_KEY)
 
 pro = ts.pro_api()
@@ -58,10 +58,10 @@ def get_all_stocks_data(stock_list, start, end, show_progress=True):
             df.columns = ["date", "open", "high", "low", "close", "volume"]
             df["adjusted"] = df["close"]
             collector = daily[stock_code]
-            collector.insert_many(df.to_dict("records"))
+            # collector.insert_many(df.to_dict("records"))
             # print(collector.list_indexes())
             # create index for date
-            collector.create_index([("date", 1)], unique=True)
+            # collector.create_index([("date", 1)], unique=True)
             # print(df)
 
 
