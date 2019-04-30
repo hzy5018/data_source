@@ -136,7 +136,7 @@ def mongo_bundle(environ,
             raise ValueError("mongo client: %s don't contain database: %s"
                              % (mongo_client, mongo_db))
         mongo_db = mongo_client[param["db"]]
-        symbols = set(param["collection"]) \
+        symbols = set(param["collections"])\
                   & set(mongo_db.list_collection_names())
         if not symbols:
             raise ValueError("no <symbol> found in %s" % mongo_db)
