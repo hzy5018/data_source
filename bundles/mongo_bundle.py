@@ -133,7 +133,7 @@ def mongo_bundle(environ,
                                                 'effective_date'])}
     for param in bundle_param:
         mongo_db = mongo_client[param["db"]]
-        if not mongo_client.list_database_names().contains(mongo_db):
+        if mongo_db not in mongo_client.list_database_names():
             raise ValueError("mongo client: %s don't contain database: %s"
                              % (mongo_client, mongo_db))
         symbols = set(param["collection"]) \
