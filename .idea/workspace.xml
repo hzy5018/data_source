@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4a9bacce-1c50-4843-a7af-05d4b399f136" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bundles/mongo_bundle.py" beforeDir="false" afterPath="$PROJECT_DIR$/bundles/mongo_bundle.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -36,8 +37,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/bundles/mongo_bundle.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="168">
-              <caret line="139" column="55" selection-start-line="139" selection-start-column="55" selection-end-line="139" selection-end-column="55" />
+            <state relative-caret-position="306">
+              <caret line="59" column="45" selection-start-line="59" selection-start-column="45" selection-end-line="59" selection-end-column="45" />
               <folding>
                 <element signature="e#440#450#0" expanded="true" />
               </folding>
@@ -212,7 +213,7 @@
       <workItem from="1554020351135" duration="9721000" />
       <workItem from="1554040608777" duration="2700000" />
       <workItem from="1554111189568" duration="569000" />
-      <workItem from="1556605651653" duration="4036000" />
+      <workItem from="1556605651653" duration="4266000" />
     </task>
     <task id="LOCAL-00001" summary="update">
       <created>1554042626482</created>
@@ -263,11 +264,32 @@
       <option name="project" value="LOCAL" />
       <updated>1556610395253</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="update">
+      <created>1556610500385</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1556610500385</updated>
+    </task>
+    <task id="LOCAL-00009" summary="update">
+      <created>1556610592187</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1556610592187</updated>
+    </task>
+    <task id="LOCAL-00010" summary="update">
+      <created>1556610654201</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1556610654202</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="17026000" />
+    <option name="totallyTimeSpent" value="17256000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1680" height="956" extended-state="6" />
@@ -356,8 +378,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/bundles/mongo_bundle.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="139" column="55" selection-start-line="139" selection-start-column="55" selection-end-line="139" selection-end-column="55" />
+        <state relative-caret-position="306">
+          <caret line="59" column="45" selection-start-line="59" selection-start-column="45" selection-end-line="59" selection-end-column="45" />
           <folding>
             <element signature="e#440#450#0" expanded="true" />
           </folding>

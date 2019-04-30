@@ -57,6 +57,7 @@ def mongo_equities(bundle_param=None, mongo_client=None):
                 csvdir_equities(["daily", "minute"],
                 '/full/path/to/the/csvdir/directory'))
     """
+    logger.info("bundle_param:", bundle_param)
 
     return MongoBundle(bundle_param, mongo_client).ingest
 
