@@ -57,7 +57,7 @@ def mongo_equities(bundle_param=None, mongo_client=None):
                 csvdir_equities(["daily", "minute"],
                 '/full/path/to/the/csvdir/directory'))
     """
-    logger.info("bundle_param:", bundle_param)
+    logger.info("bundle_param: %s" % bundle_param)
 
     return MongoBundle(bundle_param, mongo_client).ingest
 
@@ -138,11 +138,13 @@ def mongo_bundle(environ,
             raise ValueError("mongo client: %s don't contain database: %s"
                              % (mongo_client, mongo_db))
         mongo_db = mongo_client[param["db"]]
-        logger.info("mongo_db:", mongo_db)
-        logger.info("collections:", param["collections"])
+        logger.info("mongo_db: %s" % mongo_db)
+        logger.info("collections: %s" % param["collections"])
         symbols = set(param["collections"])\
                   & set(mongo_db.list_collection_names())
-        logger.info("symbols:", symbols)
+        logger.info("mongo collections: %s" % mongo_db.list_collection_names())
+        logger.info("symbols: %s" % symbols)
+
         if not symbols:
             raise ValueError("no <symbol> found in %s" % mongo_db)
 
@@ -252,7 +254,8 @@ register_calendar_alias("MONGO", "XSHG")
 def main():
     mongo_db = client["daily"]["600578.SH"]
     # mongo_db.get_collection("")
-    print(read_mongo(mongo_db))
+    # print(read_mongo(mongo_db))
+    mongo_equities([{"db": "daily", "collections": ["000001.SH"]}], client)
 
 
 #
