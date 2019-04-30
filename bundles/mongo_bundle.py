@@ -29,7 +29,7 @@ logger = Logger(__name__)
 logger.handlers.append(handler)
 
 
-def mongo_equities(tframes=None, mongo_client=None):
+def mongo_equities(bundle_param=None, mongo_client=None):
     """
     Generate an ingest function for custom data bundle
     This function can be used in ~/.zipline/extension.py
@@ -38,8 +38,9 @@ def mongo_equities(tframes=None, mongo_client=None):
 
     Parameters
     ----------
-    tframes: tuple, optional
-        The data time frames, supported timeframes: 'daily' and 'minute'
+    bundle_param: list of dict, eg. [{"db": "db_name",
+    "collections: ["1", "2"]}, {"db": "db_name", "collections: ["1", "2"]},
+     {"db": "db_name", "collections: ["1", "2"]}]
     mongo_client : mongo client
 
     Returns
@@ -57,7 +58,7 @@ def mongo_equities(tframes=None, mongo_client=None):
                 '/full/path/to/the/csvdir/directory'))
     """
 
-    return MongoBundle(tframes, mongo_client).ingest
+    return MongoBundle(bundle_param, mongo_client).ingest
 
 
 class MongoBundle:
@@ -66,8 +67,8 @@ class MongoBundle:
     list of time frames and a path to the csvdir directory
     """
 
-    def __init__(self, tframes=None, mongo_client=None):
-        self.tframes = tframes
+    def __init__(self, bundle_param=None, mongo_client=None):
+        self.bundle_param = bundle_param
         self.mongo_db = mongo_client
 
     def ingest(self,
@@ -93,7 +94,7 @@ class MongoBundle:
                      cache,
                      show_progress,
                      output_dir,
-                     self.tframes,
+                     self.bundle_param,
                      self.mongo_db)
 
 
@@ -109,10 +110,10 @@ def mongo_bundle(environ,
                  cache,
                  show_progress,
                  output_dir,
-                 tframes=None,
+                 bundle_param=None,
                  mongo_client=None):
     """
-    Build a zipline data bundle from the directory with csv files.
+    Build a zipline data bundle from the directory with mongo db.
     """
     if not mongo_client:
         mongo_client = environ.get('MONGOCLIENT')
@@ -122,39 +123,38 @@ def mongo_bundle(environ,
     if not mongo_client.list_database_names():
         raise ValueError("%s is not a mongo connection" % mongo_client)
 
-    if not tframes:
-        tframes = {"daily", "minute"} \
-            .intersection(mongo_client.list_database_names())
-        if not tframes:
-            raise ValueError("'daily' and 'minute' database "
-                             "not found in '%s'" % mongo_client)
+    if not bundle_param:
+        raise ValueError("need bundle param")
 
     divs_splits = {'divs': DataFrame(columns=['sid', 'amount',
                                               'ex_date', 'record_date',
                                               'declared_date', 'pay_date']),
                    'splits': DataFrame(columns=['sid', 'ratio',
                                                 'effective_date'])}
-    for tframe in tframes:
-        mongo_db = mongo_client[tframe]
-
-        symbols = mongo_db.list_collection_names()
+    for param in bundle_param:
+        mongo_db = mongo_client[param["db"]]
+        if not mongo_client.list_database_names().contains(mongo_db):
+            raise ValueError("mongo client: %s don't contain database: %s"
+                             % (mongo_client, mongo_db))
+        symbols = set(param["collection"]) \
+                  & set(mongo_db.list_collection_names())
         if not symbols:
-            raise ValueError("no <symbol>.csv* files found in %s" % mongo_db)
+            raise ValueError("no <symbol> found in %s" % mongo_db)
 
         dtype = [('start_date', 'datetime64[ns]'),
                  ('end_date', 'datetime64[ns]'),
                  ('auto_close_date', 'datetime64[ns]'),
                  ('symbol', 'object')]
         metadata = DataFrame(empty(len(symbols), dtype=dtype))
+        #
+        # if tframe == 'minute':
+        #     writer = minute_bar_writer
+        # else:
+        #     writer = daily_bar_writer
 
-        if tframe == 'minute':
-            writer = minute_bar_writer
-        else:
-            writer = daily_bar_writer
-
-        writer.write(_pricing_iter(mongo_db, symbols, metadata,
-                                   divs_splits, show_progress),
-                     show_progress=show_progress)
+        daily_bar_writer.write(_pricing_iter(mongo_db, symbols, metadata,
+                                             divs_splits, show_progress),
+                               show_progress=show_progress)
 
         # Hardcode the exchange to "CSVDIR" for all assets and (elsewhere)
         # register "CSVDIR" to resolve to the NYSE calendar, because these
@@ -216,6 +216,7 @@ def _pricing_iter(mongo_db, symbols, metadata, divs_splits, show_progress):
 
             yield sid, dfr
 
+
 import numpy as np
 
 
@@ -236,6 +237,7 @@ def read_mongo(collector):
     # print(df.dtypes)
     return df
 
+
 # sessions = get_calendar('XSHG').sessions_in_range("19900101", "20181231")
 
 
@@ -246,6 +248,8 @@ def main():
     mongo_db = client["daily"]["600578.SH"]
     # mongo_db.get_collection("")
     print(read_mongo(mongo_db))
+
+
 #
 #
 if __name__ == '__main__':
