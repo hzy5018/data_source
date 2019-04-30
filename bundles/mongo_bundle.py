@@ -135,6 +135,7 @@ def mongo_bundle(environ,
         if param["db"] not in mongo_client.list_database_names():
             raise ValueError("mongo client: %s don't contain database: %s"
                              % (mongo_client, mongo_db))
+        logger.info("db:", param["db"])
         mongo_db = mongo_client[param["db"]]
         logger.info("mongo_db:", mongo_db)
         logger.info("collections:", param["collections"])
