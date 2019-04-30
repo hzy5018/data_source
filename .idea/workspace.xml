@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="4a9bacce-1c50-4843-a7af-05d4b399f136" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bundles/mongo_bundle.py" beforeDir="false" afterPath="$PROJECT_DIR$/bundles/mongo_bundle.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -22,11 +21,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/tushare_source/sync_hist.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="489">
-              <caret line="41" column="19" lean-forward="true" selection-start-line="41" selection-start-column="19" selection-end-line="41" selection-end-column="19" />
+            <state relative-caret-position="292">
+              <caret line="49" column="47" lean-forward="true" selection-start-line="49" selection-start-column="47" selection-end-line="49" selection-end-column="47" />
               <folding>
                 <element signature="e#436#456#0" expanded="true" />
               </folding>
@@ -34,11 +33,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/bundles/mongo_bundle.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="59" column="45" selection-start-line="59" selection-start-column="45" selection-end-line="59" selection-end-column="45" />
+            <state relative-caret-position="-2215">
+              <caret line="49" lean-forward="true" selection-start-line="49" selection-end-line="49" />
               <folding>
                 <element signature="e#440#450#0" expanded="true" />
               </folding>
@@ -148,7 +147,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.mongo_bundle">
+  <component name="RunManager" selected="Python.sync_hist">
     <configuration name="mongo_bundle" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="data_source" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -195,8 +194,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.mongo_bundle" />
         <item itemvalue="Python.sync_hist" />
+        <item itemvalue="Python.mongo_bundle" />
       </list>
     </recent_temporary>
   </component>
@@ -213,7 +212,7 @@
       <workItem from="1554020351135" duration="9721000" />
       <workItem from="1554040608777" duration="2700000" />
       <workItem from="1554111189568" duration="569000" />
-      <workItem from="1556605651653" duration="4266000" />
+      <workItem from="1556605651653" duration="6039000" />
     </task>
     <task id="LOCAL-00001" summary="update">
       <created>1554042626482</created>
@@ -285,15 +284,28 @@
       <option name="project" value="LOCAL" />
       <updated>1556610654202</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="update">
+      <created>1556610731936</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1556610731936</updated>
+    </task>
+    <task id="LOCAL-00012" summary="update">
+      <created>1556615903154</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1556615903154</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="17256000" />
+    <option name="totallyTimeSpent" value="19029000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1680" height="956" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25885227" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -302,15 +314,15 @@
       <window_info id="Favorites" order="4" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.3295583" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3287037" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39930555" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Console" order="7" />
       <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.3287037" />
+      <window_info anchor="bottom" id="Terminal" order="10" weight="0.3287037" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="12" />
       <window_info anchor="bottom" id="Python Console" order="13" />
@@ -329,9 +341,34 @@
     <MESSAGE value="update" />
     <option name="LAST_COMMIT_MESSAGE" value="update" />
   </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/bundles/mongo_bundle.py</url>
+          <line>61</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/bundles/mongo_bundle.py</url>
+          <line>59</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/data_source$sync_hist.coverage" NAME="sync_hist Coverage Results" MODIFIED="1554024064881" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tushare_source" />
-    <SUITE FILE_PATH="coverage/data_source$mongo_bundle.coverage" NAME="mongo_bundle Coverage Results" MODIFIED="1554030277080" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/bundles" />
+    <SUITE FILE_PATH="coverage/data_source$sync_hist.coverage" NAME="sync_hist Coverage Results" MODIFIED="1556636881514" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tushare_source" />
+    <SUITE FILE_PATH="coverage/data_source$mongo_bundle.coverage" NAME="mongo_bundle Coverage Results" MODIFIED="1556615894592" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/bundles" />
+  </component>
+  <component name="debuggerHistoryManager">
+    <expressions id="evaluateExpression">
+      <expression>
+        <expression-string>bundle_param</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+    </expressions>
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/tushare_source/bundles.py" />
@@ -366,22 +403,22 @@
     <entry file="file://$PROJECT_DIR$/tushare_source/sync_daily.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/tushare_source/sync_hist.py">
+    <entry file="file://$PROJECT_DIR$/bundles/mongo_bundle.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="489">
-          <caret line="41" column="19" lean-forward="true" selection-start-line="41" selection-start-column="19" selection-end-line="41" selection-end-column="19" />
+        <state relative-caret-position="-2215">
+          <caret line="49" lean-forward="true" selection-start-line="49" selection-end-line="49" />
           <folding>
-            <element signature="e#436#456#0" expanded="true" />
+            <element signature="e#440#450#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/bundles/mongo_bundle.py">
+    <entry file="file://$PROJECT_DIR$/tushare_source/sync_hist.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="59" column="45" selection-start-line="59" selection-start-column="45" selection-end-line="59" selection-end-column="45" />
+        <state relative-caret-position="292">
+          <caret line="49" column="47" lean-forward="true" selection-start-line="49" selection-start-column="47" selection-end-line="49" selection-end-column="47" />
           <folding>
-            <element signature="e#440#450#0" expanded="true" />
+            <element signature="e#436#456#0" expanded="true" />
           </folding>
         </state>
       </provider>

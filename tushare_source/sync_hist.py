@@ -48,10 +48,10 @@ def get_all_stocks_data(stock_list, start, end, show_progress=True):
     if show_progress:
         for stock_code in stock_list:
             click.echo("获取股票: %s" % stock_code)
-            df = ts.pro_bar(pro_api=pro,
-                            ts_code=stock_code,
-                            adj='hfq',
-                            start_date=start, end_date=end)
+            df = pro.query("daily",
+                           ts_code=stock_code,
+                           adj='hfq',
+                           start_date=start, end_date=end)
             df = df[["trade_date",
                      "open", "high", "low", "close",
                      "vol"]]
