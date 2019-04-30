@@ -37,8 +37,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/bundles/mongo_bundle.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="179">
-              <caret line="137" column="43" selection-start-line="137" selection-start-column="43" selection-end-line="137" selection-end-column="43" />
+            <state relative-caret-position="183">
+              <caret line="140" column="39" selection-start-line="140" selection-start-column="39" selection-end-line="140" selection-end-column="39" />
               <folding>
                 <element signature="e#440#450#0" expanded="true" />
               </folding>
@@ -74,6 +74,7 @@
       <find>register</find>
       <find>mongo_bundle</find>
       <find>print</find>
+      <find>collection</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -212,7 +213,7 @@
       <workItem from="1554020351135" duration="9721000" />
       <workItem from="1554040608777" duration="2700000" />
       <workItem from="1554111189568" duration="569000" />
-      <workItem from="1556605651653" duration="3765000" />
+      <workItem from="1556605651653" duration="3926000" />
     </task>
     <task id="LOCAL-00001" summary="update">
       <created>1554042626482</created>
@@ -242,11 +243,25 @@
       <option name="project" value="LOCAL" />
       <updated>1556610055999</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="update">
+      <created>1556610229222</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1556610229222</updated>
+    </task>
+    <task id="LOCAL-00006" summary="update">
+      <created>1556610314102</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1556610314102</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="16755000" />
+    <option name="totallyTimeSpent" value="16916000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1680" height="956" extended-state="6" />
@@ -335,8 +350,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/bundles/mongo_bundle.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="179">
-          <caret line="137" column="43" selection-start-line="137" selection-start-column="43" selection-end-line="137" selection-end-column="43" />
+        <state relative-caret-position="183">
+          <caret line="140" column="39" selection-start-line="140" selection-start-column="39" selection-end-line="140" selection-end-column="39" />
           <folding>
             <element signature="e#440#450#0" expanded="true" />
           </folding>
