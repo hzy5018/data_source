@@ -13,6 +13,7 @@ __author__ = 'chiyuen_woo'
 import tushare as ts
 import click
 import pymongo
+import time
 
 mongo_client = pymongo.MongoClient("60.205.230.96", 27018)
 daily = mongo_client["daily"]
@@ -62,8 +63,9 @@ def get_all_stocks_data(stock_list, start, end, show_progress=True):
             try:
                 if len(records) > 0:
                     collector.insert_many(records)
+                    time.sleep(1) #
                     # create index for date
-                    collector.create_index([("date", 1)], unique=True)
+                    # collector.create_index([("date", 1)], unique=True)
             except Exception as e:
                 print(e)
 
@@ -72,7 +74,7 @@ def get_all_stocks_data(stock_list, start, end, show_progress=True):
 
 def main():
     stock_list = get_all_stocks()
-    get_all_stocks_data(stock_list, "19900101", "20181231")
+    get_all_stocks_data(stock_list, "20190101", "20190131")
 
 
 if __name__ == '__main__':
