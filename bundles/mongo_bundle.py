@@ -132,10 +132,10 @@ def mongo_bundle(environ,
                    'splits': DataFrame(columns=['sid', 'ratio',
                                                 'effective_date'])}
     for param in bundle_param:
-        mongo_db = mongo_client[param["db"]]
-        if mongo_db not in mongo_client.list_database_names():
+        if param["db"] not in mongo_client.list_database_names():
             raise ValueError("mongo client: %s don't contain database: %s"
                              % (mongo_client, mongo_db))
+        mongo_db = mongo_client[param["db"]]
         symbols = set(param["collection"]) \
                   & set(mongo_db.list_collection_names())
         if not symbols:
